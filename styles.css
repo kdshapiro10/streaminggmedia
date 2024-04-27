@@ -83,7 +83,6 @@ ul > li:first-child > a {
     font-weight: bold;
 }
 
-
 label {
     cursor: pointer;
     display: inline-block;
@@ -168,25 +167,60 @@ audio {
     position:absolute;
     bottom: 150px;
     left: 5px;
-    opacity: 75%;
 }
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+    
+}
+audio::-webkit-media-controls-play-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255,255,255,.50);
+}
+
 #trending h2 {
-    margin-left:15px;
+    margin-left:25px;
     color:#590242;
     text-transform: uppercase;
     margin-top:30px;
 }
 
 #playlists h2 {
-    margin-left:15px;
+    margin-left:25px;
     color:#590242;
     text-transform: uppercase;
+    margin-top:50px;
 }
 
 #curated h2 {
-    margin-left:15px;
+    margin-left:25px;
     color: #590242;
     text-transform: uppercase;
+    margin-top:50px;
+}
+
+#playlists .scroll1 {
+    background-color: #2699fb;
+    color:#ffffff; 
+}
+
+#playlists section {
+    background-color: #0d8dfb;
+    padding:10px;
+}
+
+#curated .scroll1 {
+    background-color: #030a8C;
+    color:#ffffff;
+}
+
+#curated section {
+    background-color: #020873;
+    padding:10px;
 }
 .scroll {
     width:375px;
@@ -243,9 +277,27 @@ audio {
     background: #ffffff;
 }
 
+.button {
+    background-color: #590242;
+    color:#ffffff;
+    border-radius:4px;
+    text-decoration: none;
+    padding:8px 30px 8px 30px;
+    margin-left: 30px;
+    margin-top:5px;
+    margin-bottom:20px;
+}
+
+.button:hover {
+    background-color: #020659;
+}
+
 footer {
     text-align: center;
-    padding-top:10px;
+    padding-top:50px;
+    margin-bottom:15px;
+    color:#590242;
+
 }
 
 @media screen and (min-width:834px) {
@@ -258,6 +310,7 @@ footer {
         "trending trending"
         "playlists curated"
     }
+
     nav {
         width:834px;
         position:relative;
@@ -291,6 +344,7 @@ footer {
     #curated {
         grid-area: curated;
     }
+
     ul {
         width:834px;
         height:auto;
@@ -304,22 +358,26 @@ footer {
     }
 
     .scroll {
-        width: 829px;
+        width: 834px;
         display:flex;
         grid-template-columns: repeat(5, 1fr);
         overflow-x:auto;
         overflow-y: hidden;
-        margin:5px;
+        margin:0px;
     }
 
     .scroll1 {
-        height:450px;
+        height:485px;
         width:400px;
         display:grid;
         grid-template-columns:1fr;
         overflow-x: hidden;
         overflow-y: auto;
         margin:5px;
+    }
+    #playlists .scroll1 {
+        width:fit-content;
+        margin:0;
     }
 
     #playlists section {
@@ -342,11 +400,16 @@ footer {
         grid-row:1;
         bottom:15px;
         position:relative;
-
     }
+
     #playlists p {
         grid-row:2;
         bottom:40px;
+    }
+
+    #curated .scroll1 {
+        width:fit-content;
+        margin:0;
     }
     #curated section {
         display:grid;
@@ -374,7 +437,11 @@ footer {
         bottom:40px;
         position: relative;
     }
-
+     .button {
+        float:right;
+        margin-right:15px;
+        margin-top:-5px;
+     }
     label span, input {
         display: none;
     }
