@@ -74,6 +74,10 @@ li a {
     text-align: center;
 }
 
+ul li:not(:first-child):hover {
+    background-color: #590242;
+}
+
 ul > li:first-child > a {
     font-variant: small-caps;
     position:absolute;
